@@ -16,8 +16,19 @@ Else output the string "Wrong password"*/
 //   console.log(i);
 // }
 
-let counter = 0;
-while (counter <= 10) {
-  console.log(counter);
-  counter += 2;
+let user = prompt("Numele de utilizator: ");
+const userIsAdmin = user === "Admin";
+
+if (userIsAdmin) {
+  let password = prompt("Introdu parola: ");
+  const isPasswordCorect = password === "I'm an admin";
+  if (isPasswordCorect) {
+    console.log("Hello!");
+  } else {
+    console.log("Wrong password");
+  }
+} else if(user === null) {
+  console.log("Canceled");
+} else {
+  console.log("I don't know you");
 }
